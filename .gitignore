@@ -1,8 +1,6 @@
 .DS_Store
 *.py[cod]
 project
-staticfiles
-
 
 # C extensions
 *.so
