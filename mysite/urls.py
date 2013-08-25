@@ -28,6 +28,7 @@ urlpatterns = patterns('',
     (r'^career/$', views.career, {}, "Career"),
     (r'^events/$', views.calendar, {}, "Calendar"),
     (r'^photos/(.*)/$', views.photos_all, {}, ""),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
 
     #HP add pages here
