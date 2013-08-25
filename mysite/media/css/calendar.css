@@ -1,0 +1,37 @@
+body {
+    background-color: #f7f7f8;
+    background-image:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+             "Helvetica Neue", sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+		color: #66CCFF;
+}
+
+
+.calendar {
+  margin-left: 28%;
+  margin-right: 3em;
+  margin-bottom: 2em;
+}
+
+.event {
+  clear: both;
+  width: 70%;
+  float: right;
+  margin-bottom: 2em;
+}
+
+.event .title {
+  color: #66CCFF;
+  font-style: italic;
+}
+
+.event a {
+  color: #66CCFF;
+  text-decoration: none;
+  font-weight: 700;
+  padding-left: 10px;
+}

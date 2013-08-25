@@ -1,0 +1,76 @@
+body {
+    background-color: #f7f7f8;
+    background-image:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+             "Helvetica Neue", sans-serif;
+    font-weight: 300;
+}
+.photos {
+    width:900px;
+    float: left;
+    margin-left: 35%;
+}
+
+.line {
+    border-top: solid;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    margin-bottom: 10px;
+    margin-top: 13px;
+    width: 100%;
+}
+
+.photos h1 {
+    margin-left: -2em;
+		margin-bottom: 2em;
+		color: #66CCFF;
+}
+
+.photos a {
+    text-decoration: none;
+}
+.album  {
+    margin-left: -2em;
+    width: 15em;
+    display: inline-block;
+    vertical-align: top;
+    padding-right:5em;
+    padding-bottom:5em;
+    text-align: center;
+}
+
+.album .name {
+    font-weight: 600;
+		margin: 4px;
+		padding: 0;
+    text-align:center;
+    text-decoration: none;
+    color: #66CCFF;
+    margin-left: -19%;
+}
+
+#ind {
+    padding-left: 2em;
+    text-align:center;    
+}
+.individuals {
+    float: right;
+    width: 70%;
+}
+
+.large {
+    width: 15em;
+    height: 15em;
+    background-position: center center;
+    overflow: hidden;
+    border-radius: 50%;
+} 
+.individual-photo {
+    margin-left: -2em;
+    width: 15em;
+    display: inline-block;
+    vertical-align: top;
+    padding-right:5em;
+    padding-bottom:5em;
+    text-align: center;
+}

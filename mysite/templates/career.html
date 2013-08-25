@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="/media/css/contact.css">
+<link rel="stylesheet" type="text/css" href="/media/css/careers.css">
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+
+{% block content %}
+  <div class="career">    
+  <h1>Career Opportunities</h1>
+  <div class="choices">
+    <ul>
+      <li><a class="important" id="intern" href="#intern">Internships</a></li> 
+      <li><a class= "important" id ="full-time" href="#full-time">Full-Time</a></li>
+      <li><a class="important" id = "scholarship" href="#scholarship">Scholarships</a></li>
+      <li><a class="important" id = "conference" href="#conference">Conferences</a></li>
+    </ul>
+  </div>
+  <div id="intern" class="opportunity">
+    <ul>
+      {% if internship %}
+      {% for i in internship %}
+        <div class="line"></div>
+
+       <li>
+        <div class="single">
+          <h3><a href="{{ i.link }}">{{ i.name }}</a></h3>
+          {% ifequal i.paid 'Y' %}
+            <p>Paid: <em>Yes</em></p>
+          {% else %}
+            <p>Paid: <em>No</em></p>
+          {% endifequal %}
+          <p>{{ i.description }}</p>
+          {% if i.due %}
+            <p>Due: {{ i.due }}</p>
+          {% endif %}
+        </div>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>Sorry - there are no internships here.</li>
+    {% endif %}
+   </ul>
+  </div>
+  <div class="opportunity" id="full-time">
+    <ul>
+    {% if full %}
+    {% for i in full %}
+      <div class="line"></div>
+
+       <li>
+        <div class="single">
+          <h3><a href="{{ i.link }}">{{ i.name }}</a></h3>
+          {% ifequal i.paid 'Y' %}
+            <p>Paid: <em>Yes</em></p>
+          {% else %}
+            <p>Paid: <em>No</em></p>
+          {% endifequal %}
+          <p>{{ i.description }}</p>
+          {% if i.due %}
+            <p>Due: {{ i.due }}</p>
+          {% endif %}
+        </div>
+       </li>
+      {% endfor %}
+    {% else %}
+      <li>Sorry - there are no full-time opportunities here.</li>
+    {% endif %}
+    </ul>
+  </div>
+   <div class="opportunity" id="scholarship">
+    <ul>
+    {% if scholars %}
+    {% for i in scholars %}
+      <div class="line"></div>
+
+       <li>
+        <div class="single">
+          <h3><a href="{{ i.link }}">{{ i.name }}</a></h3>
+          {% ifequal i.paid 'Y' %}
+            <p>Paid: <em>Yes</em></p>
+          {% else %}
+            <p>Paid: <em>No</em></p>
+          {% endifequal %}
+          <p>{{ i.description }}</p>
+          {% if i.due %}
+            <p>Due: {{ i.due }}</p>
+          {% endif %}
+        </div>
+       </li>
+      {% endfor %}
+    {% else %}
+      <li>Sorry - there are no scholarship opportunities here.</li>
+    {% endif %}
+    </ul>
+  </div>
+   <div class="opportunity" id="conference">
+    <ul>
+    {% if conf %}
+    {% for i in full %}
+    <div class="line"></div>
+
+       <li>
+        <div class="single">
+          <h3><a href="{{ i.link }}">{{ i.name }}</a></h3>
+          {% ifequal i.paid 'Y' %}
+            <p>Paid: <em>Yes</em></p>
+          {% else %}
+            <p>Paid: <em>No</em></p>
+          {% endifequal %}
+          <p>{{ i.description }}</p>
+          {% if i.due %}
+            <p>Due: {{ i.due }}</p>
+          {% endif %}
+        </div>
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>Sorry - there are no opportunities at this time.</li>
+    {% endif %}
+    </ul>
+  </div>
+  </div>
+{% endblock content %}
+
+{% block footer %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock footer %}
+
+{% block scripts %}
+<script src="/media/js/careers.js" type="text/javascript"></script>
+<!-- HP: Put your scripts here -->
+{% endblock scripts %}

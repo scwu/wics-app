@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+<link rel='stylesheet' type='text/css' href='../media/fullcalendar/fullcalendar.css' />
+<link rel='stylesheet' type='text/css' href='../media/fullcalendar/fullcalendar.print.css' media='print' />
+<link rel="stylesheet" type="text/css" href="/media/css/calendar.css">
+
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+{% block content %}
+<div class="calendar">
+  <h1>Events</h1>
+  <div id='loading' style='display:none'>loading...</div>
+  <div id='calendar'></div>
+</div>
+<div class="event"></div>
+{% endblock content %}
+{% block scripts %}
+<!-- HP: Put your scripts here -->
+<script type='text/javascript' src='../media/jquery/jquery-1.8.1.min.js'></script>
+<script type='text/javascript' src='../media/jquery/jquery-ui-1.8.23.custom.min.js'></script>
+<script type='text/javascript' src='../media/fullcalendar/fullcalendar.min.js'></script>
+<script type='text/javascript' src='../media/fullcalendar/gcal.js'></script>
+<script>
+  $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+      eventSources: [
+      {
+        events: [
+          {% for a in events %}
+            {
+              title : "{{ a.name }}",
+              start : "{{ a.start_time }}",
+              end : "{{ a.end_time }}",
+              locate : "{{ a.location }}",
+              description : "{{ a.description }}",
+              fb_url : "{{ a.url }}"
+            },
+           {% endfor %}
+           {
+           }
+        ]
+       }],
+       eventClick: function(event) {
+          $('.event').empty();
+          $('.event').append("<p><span class=\"title\">Name:</span><a href=\"" + event.fb_url + "\">" + event.title + "</a></p><p><span class=\"title\">Time: </span>" + event.start + "-" + event.end + "</p><p><span class=\"title\">Location:</span> " + event.locate + "</p><p><span class=\"title\">Description: </span>" + event.description + "</p>");
+      $("body").animate({ scrollTop: $(document).height() }, "slow");
+     }
+    });
+});
+</script>
+{% endblock scripts %}

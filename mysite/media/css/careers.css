@@ -1,0 +1,60 @@
+body {
+  background-color: #f7f7f8;
+  background-image: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+
+div.career {
+  margin-top: 0px;
+  margin-left: 27%;
+}
+
+h1 {
+  color: #66CCFF;
+    margin-bottom:1em;
+}
+
+.choices ul li{
+    display: inline-block;
+    list-style-type:none;
+}
+
+.important {
+    background-color: #808080;
+    padding: 1em 1em 1em 1em;
+    text-decoration:none;
+    color: white;
+    outline: none;
+}
+
+.important#intern {
+  background-color: #66CCFF;
+}
+
+.opportunity {
+  margin-top: 50px;
+}
+
+ul {
+  list-style: none;
+}
+.line {
+  border-bottom: solid grey;
+  border-bottom-width: 1px;
+width: 65%;
+}
+
+.single a {
+  color:  #66CCFF;
+  text-decoration: none;
+}
+.single {
+  margin-left: 2%;
+  width: 65%;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.single p{
+  line-height: 5px;
+}

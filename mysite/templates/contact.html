@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="/media/css/contact.css">
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+
+{% block content %}
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+  <div class="contact">    
+    <div class="form">
+    <h1>Get in touch with us!</h1>
+    <div class="line"></div>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form id="contact_form">
+         <div class="field" id="name">
+            {{ form.name.errors }}
+            <label for="id_name">Name*</label>
+            {{ form.name }}
+          </div>
+        <div class="field" id="company">
+            {{ form.company.errors }}
+            <label for="id_company">Company</label>
+            {{ form.company }}
+        </div>
+        <div class="field" id="subject">
+            {{ form.subject.errors }}
+            <label for="id_subject">Subject*</label>
+            {{ form.subject }}
+        </div>
+        <div class="field" id="email">
+            {{ form.email.errors }}
+            <label for="id_email">Your e-mail address*</label>
+            {{ form.email }}
+        </div>
+        <div class="field" id="url">
+            {{ form.url.errors }}
+            <label for="id_email">Website URL</label>
+            {{ form.url }}
+        </div>
+
+        <div class="field" id="message">
+            {{ form.message.errors }}
+            <label for="id_message">Message*</label>
+            {{ form.message }}
+        </div>
+        <input type="submit" id="submit_contact" value="Submit">
+      </form>
+    </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock footer %}
+
+{% block scripts %}
+<!-- HP: Put your scripts here -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&.js"></script>
+<script type='text/javascript' src='../media/js/contact.js'></script>
+{% endblock scripts %}

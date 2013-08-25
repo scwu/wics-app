@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="/media/css/photos.css">
+<link rel="stylesheet" href="/media/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+
+{% block content %}
+	<div class="photos">
+    <a href="/photos/"><h1>Back</h1></a><br/>
+	{% for a in photos %}
+        <div class="individual-photo">
+          <a href="{{ a.source }}" class="ind">
+            <div style="background-image: url('{{ a.icon }}');" class="large" alt="photo"></div>
+          </a>
+        </div>
+	{% endfor %}
+  </div>
+{% endblock content %}
+{% block scripts %}
+    <script type="text/javascript" src="/media/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/media/js/photos.js" type="text/javascript"></script>
+{% endblock scripts %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="/media/css/contact.css">
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+
+{% block content %}
+<div class="contact">
+<h1>Contact Information</h3>
+
+<p>Thank you for contacting us.</p>
+
+<p>We will attempt to get back to you within 48 hours</p>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock footer %}
+
+{% block scripts %}
+<!-- HP: Put your scripts here -->
+{% endblock scripts %}

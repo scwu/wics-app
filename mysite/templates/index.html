@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}{% endblock %}
+
+{% block styles %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock styles %}
+
+{% block nav %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock nav %}
+
+{% block content %}
+<!-- HP: This is where all your shit goes! Remove what's currently here.  -->
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="call-to-action">
+    <h1>Women in Computer Science @ the University of Pennsylvania</h1>
+    <p>Welcome! We are the WiCS group at the University of Pennsylvania, serving to create a fostering, supportive community of women at Penn in their technical pursuits. In the past - we have hosted Google, Microsoft, LinkedIn, Goldmann Sachs, among other companies to recruit on campus. Please take a look around and check out what we offer.</p>
+  </h1> 
+  </div>
+{% endblock content %}
+
+{% block footer %}
+<!-- HP: Usually leave this alone. You can override the default by removing block.super or augment it by adding things above or below.  -->
+{{block.super}}
+{% endblock footer %}
+
+{% block scripts %}
+<!-- HP: Put your scripts here -->
+{% endblock scripts %}

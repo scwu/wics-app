@@ -1,0 +1,87 @@
+body {
+    background-color: #f7f7f8;
+    background-image:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+             "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+.description-wics {
+    margin-left: 28%;
+		color: #66CCFF;
+}
+
+.description-wics p {
+    color: gray;
+    padding-right: 5em;
+}
+
+.line {
+		margin-top: 10px;
+		border-top: solid;
+		border-width: 1px;
+		border-color: #E6E6E6;
+		margin-bottom: 10px;
+}
+.about-us {
+    margin-left: 28%;
+}
+
+.about-description {
+    margin-left: 4em;
+    width: 95%;
+}
+
+.about-us h1 {
+		margin-bottom: 2em;
+		color: #66CCFF;
+}
+
+.about-us {
+		padding-bottom: 4em;
+}
+.about-individual  {
+    width: 17em;
+    display: inline-block;
+    height: 35em;
+    vertical-align: top;
+    text-align:left;
+    padding-right:5em;
+		padding-bottom: 5em;
+}
+
+.about-individual img {
+    width: 15em;
+    border-radius:50%;
+}
+
+.about-individual .name {
+		font-weight: bold;
+		margin: 4px;
+		padding: 0;
+		color: gray;
+}
+
+.about-individual .email {
+		font-style: italic;
+		margin:4px;
+		padding:0;
+		color: #66CCFF;
+}
+
+.about-individual .major {
+		font-weight: 700;	
+		margin: 4px;
+		padding: 0;
+		font-size: 0.96em;
+		color: gray;
+}
+
+.about-individual .detailed-description {
+		font-weight:100;
+		color: gray;
+		font-size: 0.96em;
+		line-height: 130%;
+}
