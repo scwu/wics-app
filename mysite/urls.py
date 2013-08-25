@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')), #HP uncommented
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)), #HP uncommented
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATIC_ROOT,
+    }),
     #HP this serves our media files the easy(ish) way.
     (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}), #HP
 
@@ -28,7 +31,6 @@ urlpatterns = patterns('',
     (r'^career/$', views.career, {}, "Career"),
     (r'^events/$', views.calendar, {}, "Calendar"),
     (r'^photos/(.*)/$', views.photos_all, {}, ""),
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
 
     #HP add pages here
