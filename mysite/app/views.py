@@ -131,11 +131,14 @@ def contact(request):
     form = ContactForm(request.POST)
     if form.is_valid():
       cd = form.cleaned_data
+      message = ('Message: '+cd['message']+"\n"+
+        "Company: "+ cd['company'] + "\n" +
+        "URL: " + cd['url'])
       email = EmailMessage(
         cd['subject'],
-        cd['message'],
-        cd.get('email'),
-        ['s.clara.wu@gmail.com'],
+        message,
+        cd['email'],
+        ['s.clara.wu@gmail.com', 'snehak@wharton.upenn.edu', 'johanna.m.martens@gmail.com'],
       )
       email.send()
       return HttpResponse('success')

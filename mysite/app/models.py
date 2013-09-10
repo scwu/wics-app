@@ -5,6 +5,11 @@ from django.forms.fields import DateField
 # Create your models here.
 
 class Event(models.Model):
+  name = models.CharField(max_length=500, verbose_name = 'Name of Event')
+  description = models.CharField(max_length=2000)
+  start_time = models.DateTimeField()
+  end_time  = models.DateTimeField()
+  location = models.CharField(max_length=500)
   fb_url = models.URLField(verbose_name='Facebook Event Link')
   added = models.DateTimeField(auto_now_add=True)
 
@@ -37,7 +42,7 @@ class Opportunity(models.Model):
   paid = models.CharField(max_length=2, choices=PAID, default=Y)
   description = models.TextField()
   due = models.DateField(null=True, blank=True, verbose_name="Due Date", help_text=('Enter Date Format CCYY-MM-DD'))
-  
+
   def __unicode__(self):
     return u'%s' % (self.name)
 
