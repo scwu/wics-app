@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     (r'^career/$', views.career, {}, "Career"),
     (r'^events/$', views.calendar, {}, "Calendar"),
     (r'^photos/(.*)/$', views.photos_all, {}, ""),
+    (r'^dropbox/$', views.dropbox, {}, "Dropbox Invite"),
 
 
     #HP add pages here

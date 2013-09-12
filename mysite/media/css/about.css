@@ -64,7 +64,8 @@ body {
 		color: gray;
 }
 
-.about-individual .email {
+.about-individual .email a {
+    text-decoration: none;
 		font-style: italic;
 		margin:4px;
 		padding:0;

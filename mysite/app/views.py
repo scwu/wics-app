@@ -133,7 +133,8 @@ def contact(request):
       cd = form.cleaned_data
       message = ('Message: '+cd['message']+"\n"+
         "Company: "+ cd['company'] + "\n" +
-        "URL: " + cd['url'])
+        "URL: " + cd['url'] + "\n" +
+        "email: " + cd['email'])
       email = EmailMessage(
         cd['subject'],
         message,
@@ -169,29 +170,31 @@ def photos(request):
       'time' : album['updated_time'],
     }
     list_albums.append(info)
-  context={
-      'thispage':'Photos',
-      'album' : list_albums,
-  }
-  return render_to_response('photos.html', hackpackify(request, context))
+    context={
+        'thispage':'Photos',
+        'album' : list_albums,
+    }
+    return render_to_response('photos.html', hackpackify(request, context))
 
 def photos_all(request, album_id):
-  access='345148995606822|DZwQeXvfbnXR9PaNczKW2b-HNaY'
-  id_album = album_id.strip()
-  string = "https://graph.facebook.com/%s" % id_album
-  f3 = urllib.urlopen(string + "/photos?access_token=%s" % access)
-  allp = json.loads(f3.read())
-  eachp = []
-  dictionary2 = allp['data']
-  for e in dictionary2:
-    info2 = {
-      'icon': e['images'][5]['source'],
-      'source':e['source'],
+    access='345148995606822|DZwQeXvfbnXR9PaNczKW2b-HNaY'
+    id_album = album_id.strip()
+    string = "https://graph.facebook.com/%s" % id_album
+    f3 = urllib.urlopen(string + "/photos?access_token=%s" % access)
+    allp = json.loads(f3.read())
+    eachp = []
+    dictionary2 = allp['data']
+    for e in dictionary2:
+        info2 = {
+        'icon': e['images'][5]['source'],
+        'source':e['source'],
+        }
+        eachp.append(info2)
+    context={
+        'thispage': 'Photos',
+        'photos' : eachp,
     }
-    eachp.append(info2)
-  context={
-      'thispage': 'Photos',
-      'photos' : eachp,
-  }
-  return render_to_response('albums.html', hackpackify(request, context))
+    return render_to_response('albums.html', hackpackify(request, context))
 
+def dropbox(request):
+    return render_to_response('dropbox.html', hackpackify(request, {}))
