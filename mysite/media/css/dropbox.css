@@ -8,19 +8,20 @@ body, html {
 	background-color: #324d80;
 	position: relative;
 	height: 100%;
+	overflow: auto;
 }
+
 #information {
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 85%;
 	width: 90.5%;
 	border: 20px double white;
 	margin: auto;
-	padding: 20px 20px 20px 20px;
-	overflow: auto;
+	height: 87%;
+	display: table;
 }
 
 #invitation h1 {
@@ -29,7 +30,7 @@ body, html {
 	text-shadow: 0px 2px 3px #555;
 	text-align: center;
 	position: relative;
-	top: -50px;
+	margin-top: 0px;
 }
 
 #invitation h2 {
@@ -43,6 +44,9 @@ body, html {
 
 #invitation {
 	height: 90%;
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 30px;
 }
 
 #date {
@@ -50,13 +54,13 @@ body, html {
 	width: 100%;
 	position: relative;
 	text-align: center;
-	top: -100px;
+	margin-top: 0;
 }
 #date h2 {
 	font-size: 40px;
 	display: inline;
 	position: relative;
-	top: -50px;
+	top: -35px;
 	line-height: 80px;
 }
 #date p {
@@ -72,19 +76,19 @@ body, html {
 	border-left: 10px double white;
 	margin-left: 20px;
 	margin-right: 20px;
-	height: 20%;
+	height: 100px;
 	display: inline-block;
 }
 
 #date .larger_date {
 	font-size: 80px;
 	position: relative;
-	top: -35px;
+	top: -20px;
 }
 #date .smaller_date {
 	font-size: 30px;
 	position: relative;
-	top: -52px;
+	top: -40px;
 }
 
 #location h2 {
@@ -92,12 +96,12 @@ body, html {
 }
 #location {
 	position: relative;
-	top: -120px;
+	margin-top: -30px;
 }
 
 #invitation #description {
 	position: relative;
-	top: -120px;
+	margin-top: -90px;
 	font-size: 20px;
 }
 
@@ -122,14 +126,16 @@ input {
 }
 
 select {
-	margin-right: 20px;
+   margin-right: 20px;
 	width: 60px;
-   height: 34px;
+   height: 28px;
    overflow: hidden;
    background-color: #46639a;
    outline: none;
    color: white;
    border: 0;
+   position: relative;
+   top: -8px;
 }
 
 label {
@@ -147,7 +153,7 @@ form {
 
 #form {
 	position: relative;
-	top: -120px;
+	margin-top: -40px;
 	text-align: center;
 }
 
